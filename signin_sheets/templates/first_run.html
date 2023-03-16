@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1 class='fw3'>Please create admin account.</h1>
+<h2 class='fw3'>This account will be able to see all the participants for your events, so choose a good password and don&rsquo;t share it.</h2>
+    <form action='' method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value="Create admin user" class="fw3 bg-dark-red br2 b--none white pa2 ph4" />
+    </form>
+
+{% endblock %}

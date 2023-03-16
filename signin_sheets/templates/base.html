@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+<title>DSA Simple Signin Sheets - {% block title %}{% endblock %}</title>
+<style>
+    html {
+        background-color: #393e41;
+        color: #f6f7eb;
+        font-size: 18px;
+    }
+    nav {
+        background-color: #393e41;
+    }
+    label {
+        display: block;
+        margin: 2rem 0 0.5rem 0;
+        font-weight: 400;
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+    .helptext {
+        color: #ddd;
+        display: block;
+        padding: 0.25rem 0 0.25rem 0;
+    }
+    .helptext:hover {
+        color: #fff;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        width: 100%;
+        border: none;
+        background: transparent;
+        border-bottom: 1px dotted white;
+        color: white;
+    }
+    @keyframes fadeOutAndClear {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1);
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0);
+        }
+    }
+    .messages {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        max-width: 100%;
+        height: 100vh;
+        background: #393e41;
+        animation-delay: 1s;
+        animation-duration: 1s;
+        animation-name: fadeOutAndClear;
+        animation-fill-mode: forwards;
+    }
+</style>
+
+<body>
+
+<nav class="w-100 fixed pv3 ph4">
+    <a href="/" class="fw4 ttu f6 white link mr3"><span class="dark-red dib mr2">&#127801;</span>Home</a>
+    {% if not request.user.is_anonymous %}
+        <a href="{% url 'event-list' %}" class="fw4 ttu f6 white link mr3">My Events</a>
+        <a href="{% url 'event-create' %}" class="fw4 ttu f6 white link mr3">New Event</a>
+        <a href="{% url 'logout' %}" class="fw4 ttu f6 white link mr3">Logout</a>
+    {% endif %}
+</nav>
+
+<main class="pv5 pa4 w-80-ns w-100">
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+</html>
