@@ -71,9 +71,9 @@
 <nav class="w-100 fixed pv3 ph4">
     <a href="/" class="fw4 ttu f6 white link mr3"><span class="dark-red dib mr2">&#127801;</span>Home</a>
     {% if not request.user.is_anonymous %}
-        <a href="{% url 'event-list' %}" class="fw4 ttu f6 white link mr3">My Events</a>
-        <a href="{% url 'event-create' %}" class="fw4 ttu f6 white link mr3">New Event</a>
-        <a href="{% url 'logout' %}" class="fw4 ttu f6 white link mr3">Logout</a>
+        <a href="{% url 'event-list' %}" class="fw4 ttu f6 white link mr3">Мои мероприятия</a>
+        <a href="{% url 'event-create' %}" class="fw4 ttu f6 white link mr3">Новое мероприятие</a>
+        <a href="{% url 'logout' %}" class="fw4 ttu f6 white link mr3">Выйти</a>
     {% endif %}
 </nav>
 

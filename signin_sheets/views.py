@@ -121,25 +121,15 @@ def event_to_csv(request, *args, **kwargs):
     writer.writerow([
             'first_name',
             'last_name',
-            'email',
-            'street_one',
-            'street_two',
-            'city',
-            'state',
-            'zip_code',
-            'telephone_number',
+            'login',
+            'group',
         ])
     for part in participants:
         writer.writerow([
             part.first_name,
             part.last_name,
-            part.email,
-            part.street_one,
-            part.street_two,
-            part.city,
-            part.state,
-            part.zip_code,
-            part.telephone_number,])
+            part.login,
+            part.group,])
     return response
 
 

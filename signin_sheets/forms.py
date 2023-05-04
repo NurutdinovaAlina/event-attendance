@@ -25,11 +25,6 @@ class ParticipantSigninForm(ModelForm):
         fields = [
             'first_name',
             'last_name',
-            'email',
-            'street_one',
-            'street_two',
-            'city',
-            'state',
-            'zip_code',
-            'telephone_number',
+            'login',
+            'group',
         ]
